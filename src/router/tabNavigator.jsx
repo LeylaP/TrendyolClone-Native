@@ -1,24 +1,32 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {CART, FAVORITES, HOMESCREEN, PROFILE, TRENDYOLGO} from '../util/routes';
 
-import HomeScreen from '../screens/home';
 import TrendyolGo from '../screens/trendyolGo';
 import Profile from '../screens/profile';
 import Favorites from '../screens/favorites';
 import Cart from '../screens/cart';
-import {Home} from 'iconsax-react';
 import TabIcon from '../components/router/tabIcon';
+import appColors from '../theme/colors';
+import HomeScreen from '../screens/home';
 const Tab = createBottomTabNavigator();
 
-export function TabNavigator() {
+export default function TabNavigator() {
   return (
     <Tab.Navigator
+      initialRouteName={HOMESCREEN}
       screenOptions={({route}) => ({
         tabBarIcon: ({focused, color, size}) => {
-          return <TabIcon size={size} color={color} />;
+          return (
+            <TabIcon
+              name={route.name}
+              size={size}
+              color={color}
+              focused={focused}
+            />
+          );
         },
-        tabBarActiveTintColor: 'tomato',
-        tabBarInactiveTintColor: 'gray',
+        tabBarActiveTintColor: appColors.PRIMARY,
+        tabBarInactiveTintColor: appColors.GRAY,
       })}>
       <Tab.Screen name={HOMESCREEN} component={HomeScreen} />
       <Tab.Screen name={TRENDYOLGO} component={TrendyolGo} />
