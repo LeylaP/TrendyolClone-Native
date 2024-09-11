@@ -7,7 +7,6 @@ import {
   TRENDYOLGO,
 } from '../../util/routes';
 import {Google, Heart, Home2, Profile2User, ShoppingCart} from 'iconsax-react';
-import Profile from '../../screens/profile';
 
 const TabIcon = ({name, size, color, focused}) => {
   switch (name) {

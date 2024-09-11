@@ -6,8 +6,8 @@ import Profile from '../screens/profile';
 import Favorites from '../screens/favorites';
 import Cart from '../screens/cart';
 import TabIcon from '../components/router/tabIcon';
-import appColors from '../theme/colors';
 import HomeScreen from '../screens/home';
+import AppColors from '../theme/colors';
 const Tab = createBottomTabNavigator();
 
 export default function TabNavigator() {
@@ -25,8 +25,8 @@ export default function TabNavigator() {
             />
           );
         },
-        tabBarActiveTintColor: appColors.PRIMARY,
-        tabBarInactiveTintColor: appColors.GRAY,
+        tabBarActiveTintColor: AppColors.PRIMARY,
+        tabBarInactiveTintColor: AppColors.GRAY,
       })}>
       <Tab.Screen name={HOMESCREEN} component={HomeScreen} />
       <Tab.Screen name={TRENDYOLGO} component={TrendyolGo} />

@@ -1,5 +1,6 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import AppColors from '../../theme/colors';
 
 export default function Profile() {
   return (
@@ -14,6 +15,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#ffff',
+    backgroundColor: AppColors.WHITE,
   },
 });
